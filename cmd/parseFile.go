@@ -32,14 +32,17 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	RunE: func(cmd *cobra.Command, args []string) error {
+		// Get filename from flag
 		filename, err := cmd.Flags().GetString("file")
 		if err != nil {
 			return err
 		}
+		// Make file path absolute
 		filenameAbsPath, err := filepath.Abs(filename)
 		if err != nil {
 			return err
 		}
+		// Analyze file
 		return analyze(filenameAbsPath)
 	},
 }
