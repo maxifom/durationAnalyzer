@@ -1,0 +1,10 @@
+package main
+
+import (
+    "time"
+    "log"
+)
+func main() {
+    log.Println(time.Minute * 5)
+    log.Println(5 * time.Minute)
+}
